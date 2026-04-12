@@ -76,20 +76,29 @@ export function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-[80vh] flex items-center">
         <div className="absolute inset-0 z-0">
+          {/* Background Image with Overlay */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 grayscale hover:grayscale-0 transition-all duration-1000"
+            style={{ 
+              backgroundImage: 'url("https://picsum.photos/seed/tech-network/1920/1080")',
+              // Note: Replace the URL above with your uploaded image path if available
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-900/20 rounded-full blur-[120px]" />
         </div>
         
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-4xl mx-auto text-center space-y-8 glass p-8 md:p-12 rounded-3xl border-white/5 shadow-2xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge variant="outline" className="px-4 py-1 border-primary/50 text-primary mb-4">
+              <Badge variant="outline" className="px-4 py-1 border-primary/50 text-primary mb-4 bg-primary/5">
                 Saskatchewan’s Trusted Technicians
               </Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
@@ -112,10 +121,10 @@ export function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Button size="lg" className="w-full sm:w-auto text-lg px-8" asChild>
+              <Button size="lg" className="w-full sm:w-auto text-lg px-8 shadow-lg shadow-primary/20" asChild>
                 <Link to="/contact">Get a Free Consultation</Link>
               </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 glass hover:bg-primary/10" asChild>
                 <a href="tel:+16395258844">Call Now</a>
               </Button>
             </motion.div>
