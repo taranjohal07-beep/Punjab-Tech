@@ -1,5 +1,4 @@
-{
-  "name": "Punjab Tech",
-  "description": "Professional IT services and managed support in Saskatoon, Saskatchewan. Saskatchewan’s Trusted Technicians — Reliable Systems, Built to Last.",
-  "requestFramePermissions": []
-}
+export default defineConfig({
+  base: '/Punjab-Tech/',
+  // ... rest of config
+})
